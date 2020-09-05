@@ -26,3 +26,5 @@ CREATE TABLE employee (
   manager_id INT NULL,
   PRIMARY KEY (id)
 );
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'medicine'
