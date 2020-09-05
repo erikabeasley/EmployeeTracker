@@ -1,0 +1,29 @@
+{
+  "name": "employeetracker",
+  "version": "1.0.0",
+  "description": "A solution for managing company's employees using node, inquirer, and MySQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erikabeasley/EmployeeTracker.git"
+  },
+  "keywords": [
+    "javascript",
+    "node.js",
+    "MySQL"
+  ],
+  "author": "Erika Beasley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erikabeasley/EmployeeTracker/issues"
+  },
+  "homepage": "https://github.com/erikabeasley/EmployeeTracker#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^7.3.3",
+    "mysql": "^2.18.1"
+  }
+}
