@@ -134,10 +134,64 @@ function addRole() {
         message: "What is the department ID of this role?"
     }])
     .then(function(res) {
-        connection.query('INSERT INTO Role (title, salary, department_id) VALUES (?, ?, ?)', [res.title, res.salary, res.departId], function(err, data) {
+        connection.query('INSERT INTO Role (title, salary, department_id) VALUES (?, ?, ?)', [res.title, res.salary, res.departmentId], function(err, data) {
             if (err) throw err; 
             console.log(`\n Successfully added ${res.title} as a role. \n`);
             userData();
+        })
+    })
+}
+
+//Function for View All Departments
+function viewDepartment() {
+    connection.query("SELECT * FROM Department", function(err, data) {
+        if (err) throw err;
+        //bang (err) slang err;  
+        console.log(`\n`);
+        console.table(data);
+        userData();      
+    })
+}
+
+//Function for View All Employees
+function viewEmployee() {
+    connection.query("SELECT * FROM Employee", function(err, data) {
+        if (err) throw err;
+        //bang (err) slang err;  
+        console.log(`\n`);
+        console.table(data);
+        userData();      
+    })
+}
+
+//Function for View All Roles
+function viewRole() {
+    connection.query("SELECT * FROM Role", function(err, data) {
+        if (err) throw err;
+        //bang (err) slang err;  
+        console.log(`\n`);
+        console.table(data);
+        userData();      
+    })
+}
+
+//Function to Update Employee Role
+function updateEmployee() {
+    inquirer.prompt([
+        {
+            message: "Enter the ID number of the employee you want to update?",
+            type: "input",
+            name: "id"
+        }, {
+            message: "enter the new role ID:",
+            type: "input",
+            name: "role_id"
+        }
+    ]).then(function (response) {
+        connection.query("UPDATE employee SET role_id = ? WHERE id = ?", [response.role_id, response.id], function (err, data) {
+            if (err) throw err;
+            console.table(data);
+            userInput();
         })
     })
 }
