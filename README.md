@@ -19,14 +19,16 @@ Employee:
 - role_id - INT to hold reference to role employee has
 - manager_id - INT to hold reference to another employee that manager of the current employee. This field may be null if the employee has no manager
 
-## User Story
+## User Story 
+
+```
 As a business owner
 I want to be able to view and manage the departments, roles, and employees in my company
 So that I can organize and plan my business
-
+```
 
 ## Deployment
 https://erikabeasley.github.io/EmployeeTracker/
 
 ## Video Of Functionality
-[![Watch the video](#)](https://www.youtube.com/watch?v=s-GTWhQBSow)
+[![Watch the video](/assets/Capture.PNG)](https://www.youtube.com/watch?v=s-GTWhQBSow)
